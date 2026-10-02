@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS ironforge
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE ironforge;
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  goal VARCHAR(40) NOT NULL,
+  membership ENUM('Basic', 'Pro', 'Elite') NOT NULL DEFAULT 'Pro',
+  message TEXT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
